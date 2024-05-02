@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-diamond-1136-1093491.png" type="image/icon type">
+        <title>Estado de la Base</title>
+        <link rel="stylesheet" href="./style/index.css">
+        <link rel="stylesheet" href="./style/puzzles.css">
+        <link rel="stylesheet" href="./style/gems.css">
+
+    </head>
+    <body>
+        <div class="center">
+            <img src="./svg/Titulos/EstadoDeLaBase.svg">
+        </div>
+
+        <div class="flex spaceAround marginTop20remMenos">
+            <div class="colum">
+                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <div class="loop cubes-puzzle marginTop3rem">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+
+            <div class="colum">
+                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <div class="loop cubes-puzzle marginTop3rem">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+
+            <div class="colum">
+                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <div class="loop cubes-puzzle marginTop3rem">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+
+            <div class="colum">
+                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <div class="loop cubes-puzzle marginTop3rem">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+
+            <div class="colum">
+                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <div class="loop cubes-puzzle marginTop3rem">
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="keyboard">
+            <table class="interfaz">
+                <th>
+                    <div class="jewel circle c-violeta-claro" onclick="selectValue(1)"></div>
+                    <div class="jewel circle c-amarillo-claro" onclick="selectValue(2)"></div>
+
+                    <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
+                    <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
+
+                    <div class="jewel circle c-verde-claro" onclick="selectValue(5)"></div>
+                    <div class="jewel circle c-blanco" onclick="selectValue(6)"></div>
+
+                    <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
+                    <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
+                    <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                </th>
+            </table>
+        </section>
+        
+    </body>
+
+    <script>
+        function selectValue(numb){
+            switch(numb){
+            case 1:
+                sessionStorage.setItem("redirectTo", "statusBase")
+                window.location.href = './loading.html'
+                break;
+            case 2:
+                sessionStorage.setItem("redirectTo", "statusBase")
+                window.location.href = './logicProblems.html'
+                break;
+            case 3:
+                sessionStorage.setItem("redirectTo", "statusBase")
+                window.location.href = './.html'
+                break;
+            case 8:
+                sessionStorage.setItem("redirectTo", "mapaRoshar")
+                window.location.href = './mapaRoshar.html'
+                break}
+        }
+    </script>
+</html>

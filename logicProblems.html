@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-diamond-1136-1093491.png" type="image/icon type">
+        <link rel="stylesheet" href="./style/index.css">
+        <link rel="stylesheet" href="./style/puzzles.css">
+        <link rel="stylesheet" href="./style/gems.css">
+    </head>
+    <body>
+        <div id="puzzle-1" class="">
+            <section class="diplay ">
+                <p id="contrasenia" class="contrasenia">0000 </p>
+            </section>
+            <div class="flex ">
+                <div class="loop cubes-puzzle marginLeft20">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+    
+                </div>
+        
+                <div class="loop cubes-puzzle marginLeft20">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+        
+                <div class="loop cubes-puzzle marginLeft20">
+                    <div class="item cubes"></div>
+                </div>
+        
+                <div class="loop cubes-puzzle marginLeft20">
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                    <div class="item cubes"></div>
+                </div>
+            </div>
+
+            <section class="keyboard">
+                <table class="interfaz">
+                    <th>
+                        <div class="jewel circle c-violeta-claro" onclick="selectValue(1)"></div>
+                        <div class="jewel circle c-amarillo-claro" onclick="selectValue(2)"></div>
+    
+                        <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
+                        <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
+    
+                        <div class="jewel circle c-verde-claro" onclick="selectValue(5)"></div>
+                        <div class="jewel circle c-blanco" onclick="selectValue(6)"></div>
+    
+                        <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
+                        <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
+                        <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                    </th>
+                </table>
+            </section>
+        </div>
+        
+        <div id="puzzle-2" class="none">
+            <section class="center">
+                <img class="display" src="./images/Puzzle2/NombraAquelloQueComponeAlAlma.png">
+                
+            </section>
+            <section class="center">
+                <div class="textInputWrapper ">
+                    <input placeholder="Ingrese Respuesta" type="text" class="textInput" id="inputPuzzle2">
+                </div>
+            </section>
+            
+            <section class="keyboard">
+                <table class="interfaz">
+                    <th>
+                        <div class="jewel circle c-violeta-claro" onclick="enterResponse()"></div>
+                        </td>
+                    </th>
+                </table>
+            </section>
+        </div>  
+
+        <div class="alerta none" id="alertaError">
+            <p>Respuesta Incorrecta</p>
+        </div> 
+    </body>
+
+    <script>
+        let loginContrasenia = []
+        let inputContraseña = document.getElementById("contrasenia")
+        let inputPuzzle2 = document.getElementById("inputPuzzle2")
+        let alertaError = document.getElementById("alertaError")
+        
+
+        function selectValue(number){
+           
+                loginContrasenia.push(number)
+                let newText = ""
+
+                loginContrasenia.forEach(element => {
+                    newText = newText + element
+                });
+
+                inputContraseña.textContent = newText
+
+                if(loginContrasenia.length === 4){
+                    if(loginContrasenia[0] === 4 && loginContrasenia[1] === 5 && loginContrasenia[2] === 1 && loginContrasenia[3] === 3){
+                        localStorage.setItem("NivelConexion",1)
+                        setTimeout(function() {
+                            window.location.href = './registros.html'
+                        },5000);
+                        alert("Acceso consedido")
+                    }else{
+                        alert("Acceso denegado") 
+                    }
+                loginContrasenia = []
+                inputContraseña.textContent = ""
+                } 
+            };
+
+        function enterResponse(){
+            if (inputPuzzle2.value.toLowerCase() === "investidura" ){
+                localStorage.setItem("NivelConexion",2)
+                alert("Acceso concedido")
+            }else{
+                alertaError.classList.remove("none")
+                setTimeout(function() {
+                    alertaError.classList.add("none")
+                },5000);
+            };
+        }
+    </script>
+</html>

@@ -1,0 +1,12 @@
+.registroRoshar{
+    max-width: 80vw;
+}
+
+.title{
+    width: auto;
+}
+
+.articulo p{
+    line-height: 1.6;
+    margin-top: -0.2rem;
+}

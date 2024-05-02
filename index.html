@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Iniciar sesión</title>
+        <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-diamond-1136-1093491.png" type="image/icon type">
+        <link rel="stylesheet" href="./style/gems.css">
+        <link rel="stylesheet" href="./style/index.css">
+    </head>
+    <body>
+        <div class="out">
+            <div class="pass"></div>
+            <div class="pass"></div>
+            <div class="orbs"></div>
+            <div class="pass"></div>
+            <div class="orbs"></div>
+            <div class="orbs"></div>
+            <div class="orbs"></div>
+            <div class="pass"></div>
+            <div class="orbs"></div>
+        </div>
+        
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <section class="display">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="column">
+                <img src="./svg/Ingreso.svg">
+                <br/>
+                <br/>
+                <p id="contrasenia" class="contrasenia">0000 </p>
+            </div>
+        </section>
+        <br/><br/><br/>
+        <div class="display">
+            <img class="none" id="AccesoConcedido" src="./svg/AccesoConcedido.svg">
+            <img class="none rojo" id="AccesoDenegado" src="./svg/AccesoDenegado.svg">
+        </div>
+        <br/><br/><br/><br/>
+
+        
+        <section class="keyboard">
+            <table class="interfaz">
+                <th>
+                    <div class="jewel circle c-violeta-claro" onclick="selectValue(1)"></div>
+                    <div class="jewel circle c-amarillo-claro" onclick="selectValue(2)"></div>
+
+                    <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
+                    <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
+
+                    <div class="jewel circle c-verde-claro" onclick="selectValue(5)"></div>
+                    <div class="jewel circle c-blanco" onclick="selectValue(6)"></div>
+
+                    <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
+                    <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
+                    <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                </th>
+            </table>
+        </section>
+
+    </body>
+
+    <script>
+        let loginContrasenia = []
+        let inputContraseña = document.getElementById("contrasenia")
+        let AccesoConcedido = document.getElementById("AccesoConcedido")
+        let AccesoDenegado = document.getElementById("AccesoDenegado")
+
+        function selectValue(number){
+           
+                loginContrasenia.push(number)
+                let newText = ""
+
+                loginContrasenia.forEach(element => {
+                    newText = newText + element
+                });
+
+                inputContraseña.textContent = newText
+
+                if(loginContrasenia.length === 4){
+                    if(loginContrasenia[0] === 1 && loginContrasenia[1] === 2 && loginContrasenia[2] === 4 && loginContrasenia[3] === 8){
+                        this.enterResponse(true)
+                    }else{
+                        this.enterResponse(false)
+                        loginContrasenia = []
+                        inputContraseña.textContent = ""
+                    }
+                
+                } 
+            }
+
+        function enterResponse(event$){
+            if(event$){
+                AccesoConcedido.classList.remove("none")
+                setTimeout(function() {
+                    AccesoConcedido.classList.add("none")
+                    window.location.href = './statusBase.html'
+                },5000);
+            }else{
+                AccesoDenegado.classList.remove("none")
+                setTimeout(function() {
+                    AccesoDenegado.classList.add("none")
+                },5000);
+            }
+            
+        }
+    </script>
+</html>

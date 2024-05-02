@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-diamond-1136-1093491.png" type="image/icon type">
+        <title>Documents</title>
+        <link rel="stylesheet" href="./style/index.css">
+        <link rel="stylesheet" href="./style/gems.css">
+        <link rel="stylesheet" href="./style/map.css">
+    </head>
+    <body>
+        <br/>
+
+        <div class="center">
+            <img class="title" src="./svg/Roshar.svg">
+        </div>
+
+        <br/>
+
+        <div class="center">
+            <section class="auto-fit">
+                <img class="holograma border" src="./images/Mapa/MapaRoshar.jpg">
+                <img class="icon-ship holograma-item" src="./images/Mapa/Explosion.png">
+                <div class="icon-battle ">
+                    <img class="icon-battle-group holograma-item" src="./images/Mapa/swords.png">
+                    <img class="icon-battle-group holograma-item" src="./images/Mapa/swords.png">
+                    <img class="icon-battle-group holograma-item" src="./images/Mapa/swords.png">
+                </div>
+                <div class="icon-parshendi">
+                    <img class="icon-parshendi-group" src="./images/Mapa/langosta.png">
+                    <img class="icon-parshendi-group" src="./images/Mapa/langosta.png">
+                    <img class="icon-parshendi-group" src="./images/Mapa/langosta.png">
+                </div>
+                <div class="icon-humano">
+                    <img class="icon-humano-group" src="./images/Mapa/humano.png">
+                    <img class="icon-humano-group" src="./images/Mapa/humano.png">
+                    <img class="icon-humano-group" src="./images/Mapa/humano.png">
+                </div>
+            </section>
+        </div>
+        <br/>
+    </body>
+
+    <script>
+        function selectValue(numb){
+            switch(numb){
+            case 1:
+                sessionStorage.setItem("redirectTo", "statusBase")
+                window.location.href = './loading.html'
+                break;
+            case 8:
+                sessionStorage.setItem("redirectTo", "mapaRoshar")
+                window.location.href = './loading.html'
+                break}
+        }
+    </script>
+</html>

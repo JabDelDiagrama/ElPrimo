@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Loading</title>
+        <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-diamond-1136-1093491.png" type="image/icon type">
+        <link rel="stylesheet" href="./style/gems.css">
+        <link rel="stylesheet" href="./style/index.css">
+    </head>
+    <body>
+        <div class="loop cubes">
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+        </div>   
+    </body>
+
+    <script>
+        setTimeout(() => redierct(1), 30000)
+        
+        function redierct(numb){
+            console.log(sessionStorage.getItem("redirectTo"))
+            let redireccion = sessionStorage.getItem("redirectTo")
+            switch(redireccion){
+                case "statusBase":
+                    window.location.href = './status.html'
+                    break;
+                case "mapaRoshar":
+                    window.location.href = './mapaRoshar.html'
+                    break;
+            }
+        }
+    </script>
+</html>

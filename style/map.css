@@ -1,0 +1,163 @@
+.icon-ship{
+    position:absolute;
+    left: 120px;
+    top: 400px;
+    filter: drop-shadow(0px 0px 5px white);
+    animation: acelerar 2s infinite ease alternate-reverse;
+}
+
+@keyframes acelerar {
+    from {
+      width: 48px;
+    }
+  
+    to {
+      width: 64px;
+    }
+  }
+
+.icon-battle{
+  position:absolute;
+  left: 560px;
+  top: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-battle-group{
+  animation: acelerar-little 3s infinite ease alternate-reverse;
+}
+
+.icon-battle-group:nth-child(1){
+  position:absolute;
+  left: 40px;
+  top: -20px;
+  width: 40px;
+}
+
+.icon-battle-group:nth-child(2){
+  position:absolute;
+  left: 70px;
+  top: 20px;
+  width: 40px;
+}
+
+.icon-battle-group:nth-child(3){
+  position:absolute;
+  left: 90px;
+  top: 60px;
+  width: 40px;
+}
+
+@keyframes acelerar-little {
+  from {
+    width: 24px;
+  }
+
+  to {
+    width: 32px;
+  }
+}
+
+.icon-parshendi{
+  position:absolute;
+  left: 900px;
+  top: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-parshendi-group{
+}
+
+.icon-parshendi-group:nth-child(1){
+  position:absolute;
+  left: -70px;
+  top: -100px;
+  width: 52px;
+  rotate: 234deg
+}
+
+.icon-parshendi-group:nth-child(2){
+  position:absolute;
+  left: -50px;
+  top: 20px;
+  width: 52px;
+  rotate: 270deg
+}
+
+.icon-parshendi-group:nth-child(3){
+  position:absolute;
+  left: -120px;
+  top: 100px;
+  width: 52px;
+  rotate: 300deg
+}
+
+.icon-humano{
+  position:absolute;
+  left: 200px;
+  top: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-humano-group{
+}
+
+.icon-humano-group:nth-child(1){
+  position:absolute;
+  left: 100px;
+  top: -100px;
+  width: 52px;
+}
+
+.icon-humano-group:nth-child(2){
+  position:absolute;
+  left: 200px;
+  top: 20px;
+  width: 52px;
+}
+
+.icon-humano-group:nth-child(3){
+  position:absolute;
+  left: 320px;
+  top: 120px;
+  width: 52px;
+}
+
+@keyframes acelerar-little {
+  from {
+    width: 24px;
+  }
+
+  to {
+    width: 32px;
+  }
+}
+
+.icon{
+  width: 48px;
+}
+  
+.auto-fit{
+    position: absolute;
+    width: min-content;
+}
+
+.holograma{
+    filter: saturate(3) hue-rotate(196deg) opacity(0.50);
+}
+
+.holograma-item{
+    filter: saturate(3) hue-rotate(196deg) opacity(0.90);
+}
+
+.border{
+  border: #351515;
+  border-width: 10px;
+  border-style: solid;
+}
+.title{
+  width: 200px;
+}
