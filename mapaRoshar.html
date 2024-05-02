@@ -12,7 +12,8 @@
         <br/>
 
         <div class="center">
-            <img class="title" src="./svg/Roshar.svg">
+            <img id="titleWoman" class="title none" src="./svg/Roshar.svg">
+            <h1 id="titleMan" class="center lineaDeTexto none">Roshar</h1>
         </div>
 
         <br/>
@@ -38,20 +39,48 @@
                 </div>
             </section>
         </div>
-        <br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <section class="keyboard center">
+            <table class="interfaz">
+                <th>
+                    <div class="jewel circle c-violeta-claro" onclick="selectValue(11)"></div>
+                    <div class="jewel circle c-amarillo-claro" onclick="selectValue(12)"></div>
+                    <!--
+                    <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
+                    <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
+
+                    <div class="jewel circle c-verde-claro" onclick="selectValue(5)"></div>
+                    <div class="jewel circle c-blanco" onclick="selectValue(6)"></div>
+
+                    <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
+                    <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
+                    <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                    -->
+                    </td>
+                </th>
+            </table>
+        </section>
     </body>
 
     <script>
-        function selectValue(numb){
-            switch(numb){
-            case 1:
+        let titleWoman = document.getElementById("titleWoman")
+        let titleMan = document.getElementById("titleMan")
+        let nivelConexion = Number(sessionStorage.getItem("NivelConexion")) || 0
+        if(nivelConexion === 0){
+                titleWoman.classList.remove("none")
+            }else{
+                titleMan.classList.remove("none")
+            }
+
+        function selectValue(number){
+            if(number === 11){
                 sessionStorage.setItem("redirectTo", "statusBase")
-                window.location.href = './loading.html'
-                break;
-            case 8:
-                sessionStorage.setItem("redirectTo", "mapaRoshar")
-                window.location.href = './loading.html'
-                break}
+                window.location.href = './statusBase.html'
+            }else if (number === 12){
+                sessionStorage.setItem("redirectTo", "-")
+                window.location.href = './registros.html'
+            }
         }
     </script>
 </html>

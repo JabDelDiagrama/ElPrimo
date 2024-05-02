@@ -11,12 +11,14 @@
     </head>
     <body>
         <div class="center">
-            <img src="./svg/Titulos/EstadoDeLaBase.svg">
+            <img id="titleSVG" class="none" src="./svg/Titulos/EstadoDeLaBase.svg">
+            <h1 id="title" class="center lineaDeTexto margin-text none">Estado de la Base</h1>
         </div>
 
         <div class="flex spaceAround marginTop20remMenos">
             <div class="colum">
-                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <img id="titleAirSVG" class="color-letras none" src="./svg/Status/Reserva_de_aire.svg">
+                <h3 id="titleAir" class="center lineaDeTexto margin-text none">Nivel de Aire</h3>
                 <div class="loop cubes-puzzle marginTop3rem">
                     <div class="item cubes"></div>
                     <div class="item cubes"></div>
@@ -27,7 +29,8 @@
             </div>
 
             <div class="colum">
-                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <img id="titleTempSVG" class="color-letras none" src="./svg/Status/Reserva_de_aire.svg">
+                <h3 id="titleTemp" class="center lineaDeTexto margin-text none">Nivel de Temperatura</h3>
                 <div class="loop cubes-puzzle marginTop3rem">
                     <div class="item cubes"></div>
                     <div class="item cubes"></div>
@@ -36,7 +39,8 @@
             </div>
 
             <div class="colum">
-                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <img id="titleWaterSVG" class="color-letras none" src="./svg/Status/Reserva_de_aire.svg">
+                <h3 id="titleWater" class="center lineaDeTexto margin-text none">Nivel de Agua</h3>
                 <div class="loop cubes-puzzle marginTop3rem">
                     <div class="item cubes"></div>
                     <div class="item cubes"></div>
@@ -48,7 +52,8 @@
             </div>
 
             <div class="colum">
-                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <img id="titleFoodSVG" class="color-letras none" src="./svg/Status/Reserva_de_aire.svg">
+                <h3 id="titleFood" class="center lineaDeTexto margin-text none">Nivel de Cultivos</h3>
                 <div class="loop cubes-puzzle marginTop3rem">
                     <div class="item cubes"></div>
                     <div class="item cubes"></div>
@@ -57,7 +62,8 @@
             </div>
 
             <div class="colum">
-                <img class="color-letras" src="./svg/Status/Reserva_de_aire.svg">
+                <img id="titleMagicSVG" class="color-letras none" src="./svg/Status/Reserva_de_aire.svg">
+                <h3 id="titleMagic" class="center lineaDeTexto margin-text none">Nivel de Investidura</h3>
                 <div class="loop cubes-puzzle marginTop3rem">
                     <div class="item cubes"></div>
                 </div>
@@ -69,7 +75,7 @@
                 <th>
                     <div class="jewel circle c-violeta-claro" onclick="selectValue(1)"></div>
                     <div class="jewel circle c-amarillo-claro" onclick="selectValue(2)"></div>
-
+                    <!--
                     <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
                     <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
 
@@ -79,31 +85,61 @@
                     <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
                     <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
                     <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                    -->
                 </th>
             </table>
         </section>
-        
     </body>
 
     <script>
+        let titleAir = document.getElementById("titleAir")
+        let titleTemp = document.getElementById("titleTemp")
+        let titleWater = document.getElementById("titleWater")
+        let titleFood = document.getElementById("titleFood")
+        let titleMagic = document.getElementById("titleMagic")
+        let title = document.getElementById("title")
+
+        let titleAirSVG = document.getElementById("titleAirSVG")
+        let titleTempSVG = document.getElementById("titleTempSVG")
+        let titleWaterSVG = document.getElementById("titleWaterSVG")
+        let titleFoodSVG = document.getElementById("titleFoodSVG")
+        let titleMagicSVG = document.getElementById("titleMagicSVG")
+        let titleSVG = document.getElementById("titleSVG")
+
+            
+        let nivelConexion = Number(sessionStorage.getItem("NivelConexion")) || 0
+        if(nivelConexion === 0){
+            this.cleanNone([titleSVG,titleAirSVG, titleTempSVG, titleWaterSVG, titleFoodSVG, titleMagicSVG])
+        }else{
+            this.cleanNone([title,titleAir, titleTemp, titleWater, titleFood, titleMagic])
+        }
+
+        function cleanNone(vector){
+            console.log(vector)
+            vector.forEach(element => {
+                element.classList.remove("none")
+            });
+        }
+
         function selectValue(numb){
-            switch(numb){
-            case 1:
-                sessionStorage.setItem("redirectTo", "statusBase")
-                window.location.href = './loading.html'
-                break;
-            case 2:
-                sessionStorage.setItem("redirectTo", "statusBase")
+            let nivelConexion = Number(sessionStorage.getItem("NivelConexion")) || 0
+            console.log(nivelConexion)
+            if(nivelConexion === 0){
+                sessionStorage.setItem("redirectTo", "-")
                 window.location.href = './logicProblems.html'
-                break;
-            case 3:
-                sessionStorage.setItem("redirectTo", "statusBase")
-                window.location.href = './.html'
-                break;
-            case 8:
-                sessionStorage.setItem("redirectTo", "mapaRoshar")
-                window.location.href = './mapaRoshar.html'
-                break}
+            }else {
+
+            switch(numb){
+                case 1:
+                    sessionStorage.setItem("redirectTo", "statusBase")
+                    window.location.href = './registros.html'
+                    break;
+                case 2:
+                    sessionStorage.setItem("redirectTo", "mapaRoshar")
+                    window.location.href = './mapaRoshar.html'
+                    break
+            }     
+        }   
         }
     </script>
 </html>

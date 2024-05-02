@@ -163,9 +163,9 @@
         <section class="keyboard center">
             <table class="interfaz">
                 <th>
-                    <div class="jewel circle c-violeta-claro" onclick="selectValue(1)"></div>
-                    <div class="jewel circle c-amarillo-claro" onclick="selectValue(2)"></div>
-
+                    <div class="jewel circle c-violeta-claro" onclick="selectValue(11)"></div>
+                    <div class="jewel circle c-amarillo-claro" onclick="selectValue(12)"></div>
+                    <!--
                     <div class="jewel circle c-rojo-claro" onclick="selectValue(3)"></div>
                     <div class="jewel circle c-azul-claro" onclick="selectValue(4)"></div>
 
@@ -175,6 +175,7 @@
                     <div class="jewel circle c-naranja" onclick="selectValue(7)"></div>
                     <div class="jewel circle c-azul" onclick="selectValue(8)"></div>
                     <div class="jewel circle c-amarillo" onclick="selectValue(9)"></div>
+                    -->
                     </td>
                 </th>
             </table>
@@ -192,7 +193,16 @@
 
 
         function selectValue(number){
-            let nivelConexion = Number(localStorage.getItem("NivelConexion")) || 0
+            if(number === 11){
+                sessionStorage.setItem("redirectTo", "statusBase")
+                window.location.href = './statusBase.html'
+            }else if (number === 12){
+                sessionStorage.setItem("redirectTo", "mapaRoshar")
+                window.location.href = './mapaRoshar.html'
+            }
+            
+
+            let nivelConexion = Number(sessionStorage.getItem("NivelConexion")) || 0
             vectorArticulos.forEach((articulo, index) => {
                 if(index === number){
                     articulo.classList.remove("none")

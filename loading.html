@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="./style/index.css">
     </head>
     <body>
+        <div>
+            <p></p>
+        </div>
         <div class="loop cubes">
             <div class="item cubes"></div>
             <div class="item cubes"></div>
@@ -19,17 +22,14 @@
     </body>
 
     <script>
-        setTimeout(() => redierct(1), 30000)
+        setTimeout(() => redierct(1), 3000)
         
         function redierct(numb){
             console.log(sessionStorage.getItem("redirectTo"))
             let redireccion = sessionStorage.getItem("redirectTo")
             switch(redireccion){
                 case "statusBase":
-                    window.location.href = './status.html'
-                    break;
-                case "mapaRoshar":
-                    window.location.href = './mapaRoshar.html'
+                    window.location.href = './logicProblems.html'
                     break;
             }
         }

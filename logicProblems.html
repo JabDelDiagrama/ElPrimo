@@ -12,7 +12,13 @@
         <div id="puzzle-1" class="">
             <section class="diplay ">
                 <p id="contrasenia" class="contrasenia">0000 </p>
+
+                <div class="display">
+                    <img class="none" id="AccesoConcedido" src="./svg/AccesoConcedido.svg">
+                    <img class="none rojo" id="AccesoDenegado" src="./svg/AccesoDenegado.svg">
+                </div>
             </section>
+
             <div class="flex ">
                 <div class="loop cubes-puzzle marginLeft20">
                     <div class="item cubes"></div>
@@ -92,6 +98,9 @@
         let inputContraseña = document.getElementById("contrasenia")
         let inputPuzzle2 = document.getElementById("inputPuzzle2")
         let alertaError = document.getElementById("alertaError")
+
+        let AccesoConcedido = document.getElementById("AccesoConcedido")
+        let AccesoDenegado = document.getElementById("AccesoDenegado")
         
 
         function selectValue(number){
@@ -107,29 +116,33 @@
 
                 if(loginContrasenia.length === 4){
                     if(loginContrasenia[0] === 4 && loginContrasenia[1] === 5 && loginContrasenia[2] === 1 && loginContrasenia[3] === 3){
-                        localStorage.setItem("NivelConexion",1)
+                        sessionStorage.setItem("NivelConexion",1)
                         setTimeout(function() {
                             window.location.href = './registros.html'
                         },5000);
-                        alert("Acceso consedido")
+                        enterResponse(true);
                     }else{
-                        alert("Acceso denegado") 
+                        enterResponse(false);
                     }
                 loginContrasenia = []
                 inputContraseña.textContent = ""
                 } 
             };
 
-        function enterResponse(){
-            if (inputPuzzle2.value.toLowerCase() === "investidura" ){
-                localStorage.setItem("NivelConexion",2)
-                alert("Acceso concedido")
-            }else{
-                alertaError.classList.remove("none")
+        function enterResponse(event$){
+            if(event$){
+                AccesoConcedido.classList.remove("none")
                 setTimeout(function() {
-                    alertaError.classList.add("none")
+                    AccesoConcedido.classList.add("none")
+                    window.location.href = './statusBase.html'
                 },5000);
-            };
+            }else{
+                AccesoDenegado.classList.remove("none")
+                setTimeout(function() {
+                    AccesoDenegado.classList.add("none")
+                },5000);
+            }
+            
         }
     </script>
 </html>

@@ -357,3 +357,7 @@ button {
 .out{
   position: absolute;
 }
+
+.margin-text{
+  margin-bottom: 5rem;
+}
