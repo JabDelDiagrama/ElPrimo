@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: rgba(240, 248, 255, 0.404);
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 65%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    margin: 0;
+}
+
+.profile-card p {
+    margin: 5px 0;
+}
+
