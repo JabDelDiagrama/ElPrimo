@@ -136,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function() {
         description.textContent = `Descripción: ${profile.descripcion}`;
 
         // Agregar elementos a la tarjeta de perfil
-        if(variation){
+        console.log(document.body.clientWidth)
+        if(variation && document.body.clientWidth > 1000){
             profileCard.appendChild(img);
             profileCard.appendChild(dataCard);
         }else{

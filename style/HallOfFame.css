@@ -42,3 +42,13 @@ body {
 h2{
     padding-bottom: 1rem;
 }
+
+@media (max-width: 1000px) {
+    .profile-card {
+      flex-direction: column;
+    }
+    .profile-card img {
+        width: 100%;
+        height: 100%;
+    }
+  }
